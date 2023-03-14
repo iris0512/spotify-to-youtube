@@ -4,7 +4,7 @@ to make transfer of playlists from spotify to youtube easier
 ##
 ##
 
-#### Table of Contents
+### Table of Contents
 ---
 - [Introduction](#introduction)
 - [Requirements and Installation](#requirements-and-installation)
@@ -17,7 +17,7 @@ to make transfer of playlists from spotify to youtube easier
 This code is divided into two parts:
 1. **Spotify**: This part connects to your spotify account and pulls all the playlists, created and followed. It then extracts the playlist items and stores it to a csv file which is then used as an input to the second part.
 2. **YouTube**: This part reads the spotify data, creates playlists and adds songs to it.
-#### Requirements and Installation
+### Requirements and Installation
 ---
 1. Python - https://www.python.org/downloads/
 2. Python extensions
@@ -27,14 +27,14 @@ This code is divided into two parts:
     - spotipy
 3. Credentials for Spotify and Youtube
 **Manual intervention needed to authenticate in browser or to create access token.**
-#### Spotify
+### Spotify
 ---
  - Create an application at https://developer.spotify.com/dashboard
  - Update the `credentials.ini` file with the `client_id`, `client_secret `, `redirect_uri` and `user_id` under `[spotify]`.
   - Then run the `spotify_extraction.py` on the command line and follow the on-screen instructions to choose either to transfer all playlists or select playlists. 
  
 
-#### YouTube
+### YouTube
 ---
 - Create a Google Cloud Platform (GCP) project: https://console.cloud.google.com/apis/dashboard.
 - Enable YouTube Data API and set up the OAuth credentials: https://developers.google.com/workspace/guides/configure-oauth-consent
@@ -44,7 +44,7 @@ This code is divided into two parts:
 - Save the client secret file and API key and store the path in the `credentials.ini` file under `[youtube]` as  `CLIENT_SECRETS_FILE` and `API_KEY`.
 - **Limitation**: Due to the credit limitations on GCP platform, we save all files as and when created, the code will need changes to read these files. 
 - Run the `youtube_main.py` on the command line and follow on-screen instructions to complete transfer of playlists from Spotify to YouTube.
-#### Future Improvements
+### Future Improvements
 ---
 - For Spotify:
     - Allow user to transfer liked songs.
